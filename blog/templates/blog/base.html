@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+		<head>
+			<title>Peter Olayinaka's blog</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		</head>
+		<body>
+			<header role="Header" class="page-header">
+				{% if user.is_authenticated %}
+					<a href="{% url 'post_new' %}" class="new-post">New Post</a>
+				{% endif %}
+				<h1>
+					<a href="/" title="Peter Olayinka's Blog">Peter Olayinka's Blog</a>
+				</h1>
+			</header>
+			<section class="main" role="main">
+				{% block content %}
+				{% endblock %}
+			</section>
+			<footer class="main-footer">
+				<small>Peter Olayinka &copy;2016.</small>
+			</footer>
+		</body>
+</html>
