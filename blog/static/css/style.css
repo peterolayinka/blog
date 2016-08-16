@@ -89,6 +89,11 @@ header {
   font-size: 10px;
   margin-bottom: 2px; }
 
+.user-detail {
+  position: absolute;
+  left: 2%;
+  color: #fff; }
+
 .post-form textarea,
 .post-form input,
 .modify-post textarea,

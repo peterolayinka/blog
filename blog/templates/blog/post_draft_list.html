@@ -7,9 +7,9 @@
 		{% if user.is_authenticated %}
 			<a href="{% url 'post_edit' post_id=post.pk %}" class="edit-post">Edit Post</a>
 		{% endif %}
-		<p class="date"><a href="{% url 'post_detail' post_id=post.pk %}">#comment({{ post.comment_set.count }})</a> {{ post.published_date }}</p>
+		<p class="date">{{ post.created_date|date:'d-m-Y' }}</p>
 		<div class="post-content">
-			<p >{{ post.text|linebreaks }}</p>
+			<p >{{ post.text|truncatechars:50 }}</p>
 		</div>
 	</div>
 	{% endfor %}
